@@ -1,0 +1,37 @@
+{
+    "name": "@mpietrucha/array",
+    "version": "0.0.1",
+    "repository": "mpietrucha/array-js",
+    "license": "MIT",
+    "author": {
+        "name": "Michał Pietrucha",
+        "email": "michal.pietrucha@off-site.pl"
+    },
+    "type": "module",
+    "exports": {
+        ".": {
+            "import": "./dist/index.mjs",
+            "require": "./dist/index.cjs"
+        }
+    },
+    "main": "./dist/index.cjs",
+    "module": "./dist/index.mjs",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "unbuild",
+        "dev": "unbuild --watch",
+        "format": "prettier . --write --ignore-unknown --cache"
+    },
+    "prettier": "@mpietrucha/prettier",
+    "dependencies": {
+        "@mpietrucha/is": "^0.0.15",
+        "@mpietrucha/prettier": "^1.0.0",
+        "@mpietrucha/protected": "^0.0.2",
+        "lodash-es": "^4.17.21"
+    },
+    "devDependencies": {
+        "unbuild": "^3.5.0"
+    }
+}
