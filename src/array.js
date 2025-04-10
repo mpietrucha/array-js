@@ -1,1 +1,1 @@
-export { castArray as createArray } from 'lodash-es'
+export { castArray as createArray, size as useSize } from 'lodash-es'

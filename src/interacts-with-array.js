@@ -1,5 +1,6 @@
 import { createArray } from '@/array'
 import { InteractsWithProtected } from '@mpietrucha/protected'
+import { negate } from '@mpietrucha/value'
 
 export class InteractsWithArray extends InteractsWithProtected {
     #items = []
@@ -19,7 +20,7 @@ export class InteractsWithArray extends InteractsWithProtected {
     }
 
     unsupported(item) {
-        return !this.supported(item)
+        return negate(this.supported(item))
     }
 
     add(items) {
