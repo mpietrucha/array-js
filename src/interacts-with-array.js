@@ -27,7 +27,7 @@ export class InteractsWithArray extends InteractsWithProtected {
     add(items) {
         createArray(items)
             .filter(item => this.supported(item))
-            .forEach(item => this.items().push(item))
+            .forEach(item => this.#items.push(item))
 
         return this
     }
