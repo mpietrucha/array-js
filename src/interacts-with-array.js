@@ -1,12 +1,12 @@
 import { createArray } from '@/array'
-import { none, notNone } from '@mpietrucha/is'
+import { createNone, notNone } from '@mpietrucha/is'
 import { InteractsWithProtected } from '@mpietrucha/protected'
-import { negate } from '@mpietrucha/value'
+import { useNegate } from '@mpietrucha/value'
 
 export class InteractsWithArray extends InteractsWithProtected {
     #items = []
 
-    constructor(items = none()) {
+    constructor(items = createNone()) {
         super('add', 'items')
 
         notNone(items) && this.add(items)
@@ -21,7 +21,7 @@ export class InteractsWithArray extends InteractsWithProtected {
     }
 
     unsupported(item) {
-        return negate(this.supported(item))
+        return useNegate(this.supported(item))
     }
 
     add(items) {

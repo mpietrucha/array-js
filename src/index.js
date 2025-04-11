@@ -1,3 +1,8 @@
-export { createArray } from '@/array'
+export { createArray, useSize } from '@/array'
 export { InteractsWithArray } from '@/interacts-with-array'
-export { isArray, notArray } from '@mpietrucha/is'
+export {
+    isArray as is,
+    isArray,
+    notArray as not,
+    notArray,
+} from '@mpietrucha/is'
