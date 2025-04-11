@@ -4,10 +4,12 @@ import { InteractsWithProtected } from '@mpietrucha/protected'
 import { useNegate } from '@mpietrucha/value'
 
 export class InteractsWithArray extends InteractsWithProtected {
-    #items = []
+    #items
 
     constructor(items = createNone()) {
-        super('add', 'items')
+        super('add', 'items', 'flush')
+
+        this.flush()
 
         notNone(items) && this.add(items)
     }
@@ -22,6 +24,12 @@ export class InteractsWithArray extends InteractsWithProtected {
 
     unsupported(item) {
         return useNegate(this.supported(item))
+    }
+
+    flush() {
+        this.#items = []
+
+        return this
     }
 
     add(items) {
