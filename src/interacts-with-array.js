@@ -1,14 +1,15 @@
 import { createArray } from '@/array'
+import { none, notNone } from '@mpietrucha/is'
 import { InteractsWithProtected } from '@mpietrucha/protected'
 import { negate } from '@mpietrucha/value'
 
 export class InteractsWithArray extends InteractsWithProtected {
     #items = []
 
-    constructor(items = []) {
+    constructor(items = none()) {
         super('add', 'items')
 
-        this.add(items)
+        notNone(items) && this.add(items)
     }
 
     items() {
